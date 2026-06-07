@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rafay Farah</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23e8e8e8'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='13' font-weight='600' fill='%23080808'>RF</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -113,7 +114,7 @@
 
     /* LAYOUT */
     main {
-      max-width: 680px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 120px 2rem 80px;
     }
@@ -291,6 +292,8 @@
       text-decoration: none;
       letter-spacing: 0.04em;
       transition: color 0.15s;
+      display: flex;
+      align-items: center;
     }
 
     .project-links a:hover { color: var(--text); }
@@ -415,7 +418,7 @@
     footer {
       border-top: 1px solid var(--border);
       padding: 24px 2rem;
-      max-width: 680px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
@@ -466,6 +469,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -475,7 +479,7 @@
 
   <!-- HERO -->
   <div class="hero fade-in">
-    <div class="hero-status">Currently in Pittsburgh, PA &mdash; NSF REU @ Pitt LRDC</div>
+    <div class="hero-status">Based in Seattle, WA &mdash; Currently in Pittsburgh for NSF REU</div>
     <h1>Rafay Farah<br /><span>Software Engineer</span></h1>
     <p class="hero-bio">
       Computer Science student at the University of Washington, going into my second year.
@@ -549,6 +553,85 @@
 
   </section>
 
+  <!-- HACKATHONS -->
+  <section id="hackathons" class="fade-in">
+    <div class="section-label">Hackathons</div>
+    <div class="projects-grid">
+
+      <div class="project-item">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">SWECCathon / Mesocosm &middot; June 2026</div>
+        <div class="project-header">
+          <div class="project-name">JengaBench</div>
+          <div class="project-links">
+            <a href="https://github.com/FreezeXero/jenga-bench" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://jengabench.thairanaru.net/" target="_blank" title="Live Demo">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
+            <span class="tag" style="color:#4ade80; border-color:rgba(74,222,128,0.2); background:rgba(74,222,128,0.05);">&#127942; Top 3, Games Category</span>
+          </div>
+        </div>
+        <div class="project-desc">LLM benchmark testing whether AI models genuinely learn Jenga strategy when taught by a student. Evaluated Claude, GPT-4, and Gemini on a reproducible scoring platform.</div>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">LLM Benchmarking</span><span class="tag">Mesocosm</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Designathon &middot; May 2026</div>
+        <div class="project-header">
+          <div class="project-name">Hobs Job Jar</div>
+          <div class="project-links">
+            <a href="https://github.com/FreezeXero" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-desc">Job hunting tool designed to simplify and organize the job search process. Built around clean UX and practical workflow design for students navigating early career applications.</div>
+        <div class="project-tags">
+          <span class="tag">Design</span><span class="tag">UX</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">UWB Hacks &middot; April 2026</div>
+        <div class="project-header">
+          <div class="project-name">Ascend</div>
+          <div class="project-links">
+            <a href="https://github.com/FreezeXero/uwb-hacks-2026" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-desc">Gamified accountability and productivity app that turns daily goals into a progression system. Built end-to-end in under 24 hours.</div>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">Gamification</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Zero to Agent / v0 Hackathon &middot; April 2026</div>
+        <div class="project-header">
+          <div class="project-name">ProfLens</div>
+          <div class="project-links">
+            <a href="https://github.com/FreezeXero/v0-professor-research-agent" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://v0-proflens.vercel.app/" target="_blank" title="Live Demo">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-desc">Professor research agent that automatically surfaces faculty publications, research interests, and lab info to help students find the right researchers to reach out to.</div>
+        <div class="project-tags">
+          <span class="tag">AI Agents</span><span class="tag">Next.js</span><span class="tag">v0</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects" class="fade-in">
     <div class="section-label">Projects</div>
@@ -558,16 +641,15 @@
         <div class="project-header">
           <div class="project-name">Rize</div>
           <div class="project-links">
+            <a href="https://github.com/FreezeXero/Rize" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
             <span class="tag wip">in progress</span>
           </div>
         </div>
         <div class="project-desc">AI-powered resume builder SaaS. Full-stack with Next.js 14, Supabase, Stripe, and the Claude API. Generates polished LaTeX PDFs.</div>
         <div class="project-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">Supabase</span>
-          <span class="tag">Stripe</span>
-          <span class="tag">Claude API</span>
-          <span class="tag">LaTeX</span>
+          <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Claude API</span><span class="tag">LaTeX</span>
         </div>
       </div>
 
@@ -575,44 +657,17 @@
         <div class="project-header">
           <div class="project-name">Calyndr</div>
           <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
+            <a href="https://github.com/FreezeXero/Calyndr" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://calyndr-zeta.vercel.app/" target="_blank" title="Live Demo">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
         <div class="project-desc">iOS and web calendar app with Claude API integration. Deployed to TestFlight.</div>
         <div class="project-tags">
-          <span class="tag">iOS</span>
-          <span class="tag">Claude API</span>
-          <span class="tag">TestFlight</span>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-header">
-          <div class="project-name">JengaBench</div>
-          <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
-          </div>
-        </div>
-        <div class="project-desc">LLM benchmark that evaluates whether AI models can genuinely learn Jenga strategy when taught by a student. Built at SWECCathon 2026.</div>
-        <div class="project-tags">
-          <span class="tag">LLM</span>
-          <span class="tag">Benchmarking</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-header">
-          <div class="project-name">ProfLens</div>
-          <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
-          </div>
-        </div>
-        <div class="project-desc">Professor research agent that automatically surfaces faculty publications, interests, and lab info. Built at the v0 hackathon.</div>
-        <div class="project-tags">
-          <span class="tag">AI Agents</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">v0</span>
+          <span class="tag">iOS</span><span class="tag">Claude API</span><span class="tag">TestFlight</span>
         </div>
       </div>
 
@@ -620,14 +675,17 @@
         <div class="project-header">
           <div class="project-name">AI Interview Coach</div>
           <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
+            <a href="https://github.com/FreezeXero" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://ai-interview-coach-nwrtvkf6rnjzgq3whijkbu.streamlit.app/" target="_blank" title="Live Demo">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
         <div class="project-desc">Interview practice app simulating technical and behavioral interviews with STAR-based feedback. Integrates Claude API with dynamic resume parsing.</div>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">Claude API</span>
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Claude API</span>
         </div>
       </div>
 
@@ -635,15 +693,14 @@
         <div class="project-header">
           <div class="project-name">Discord Analytics Bot</div>
           <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
+            <a href="https://github.com/FreezeXero" target="_blank" title="GitHub">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
           </div>
         </div>
         <div class="project-desc">Full-stack analytics bot serving a 750+ member Discord community. Tracks engagement metrics and generates real-time activity leaderboards with persistent storage.</div>
         <div class="project-tags">
-          <span class="tag">Java</span>
-          <span class="tag">JDA</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Railway</span>
+          <span class="tag">Java</span><span class="tag">JDA</span><span class="tag">SQLite</span><span class="tag">Railway</span>
         </div>
       </div>
 
@@ -651,14 +708,14 @@
         <div class="project-header">
           <div class="project-name">EventHub 360</div>
           <div class="project-links">
-            <a href="https://github.com/FreezeXero" target="_blank">github</a>
+            <a href="https://gamma.app/docs/Event-Booking-Platform-pwxa48ms721wuzz?mode=doc" target="_blank" title="Demo">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
         <div class="project-desc">Full-stack event management platform built as a software engineering group project. Spring Boot backend with a React frontend.</div>
         <div class="project-tags">
-          <span class="tag">Spring Boot</span>
-          <span class="tag">React</span>
-          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">Java</span>
         </div>
       </div>
 
@@ -678,12 +735,20 @@
         <div class="about-item-value">NSF REU at Pitt LRDC<br />Pittsburgh, PA</div>
       </div>
       <div class="about-item">
-        <div class="about-item-label">Interests</div>
+        <div class="about-item-label">CS Interests</div>
         <div class="about-item-value">Developer tools, AI in software engineering, distributed systems, LLM systems design, building things that actually ship</div>
       </div>
       <div class="about-item">
         <div class="about-item-label">Languages</div>
         <div class="about-item-value">C++, Java, Python, TypeScript</div>
+      </div>
+      <div class="about-item" style="grid-column: 1 / -1;">
+        <div class="about-item-label">Relevant Coursework</div>
+        <div class="about-item-value">Data Structures &amp; Algorithms &nbsp;&middot;&nbsp; Object-Oriented Programming &nbsp;&middot;&nbsp; Software Engineering &nbsp;&middot;&nbsp; Discrete Mathematics &nbsp;&middot;&nbsp; Calculus I, II, III &nbsp;&middot;&nbsp; Technical Writing</div>
+      </div>
+      <div class="about-item" style="grid-column: 1 / -1;">
+        <div class="about-item-label">Beyond Code</div>
+        <div class="about-item-value">Outside of coding I spend my time playing video games, making apps, attending hackathons, and doing some video editing. I also post content online and have built up 50K+ followers and 34M+ combined views across platforms, alongside a 750+ member Discord community.</div>
       </div>
       <div class="about-item" style="grid-column: 1 / -1;">
         <div class="about-item-label">Resume</div>
