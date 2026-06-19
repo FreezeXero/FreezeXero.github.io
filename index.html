@@ -38,12 +38,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -55,397 +52,147 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 
     .nav-logo-mark {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+      width: 30px; height: 30px; border-radius: 7px;
       background: linear-gradient(135deg, #e8e8e8 0%, #999 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 500;
-      color: #080808;
-      letter-spacing: -0.03em;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 11px; font-weight: 500;
+      color: #080808; letter-spacing: -0.03em; flex-shrink: 0;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 2px 8px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
 
     .nav-logo-mark::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 60%);
       border-radius: inherit;
     }
 
-    .nav-logo-name {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text);
-      letter-spacing: 0.02em;
-    }
+    .nav-logo-name { font-family: var(--mono); font-size: 13px; color: var(--text); letter-spacing: 0.02em; }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.15s;
-      letter-spacing: 0.02em;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.15s; letter-spacing: 0.02em; }
     .nav-links a:hover { color: var(--text); }
 
-    /* LAYOUT */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 120px 2rem 80px;
-    }
-
+    main { max-width: 860px; margin: 0 auto; padding: 120px 2rem 80px; }
     section { margin-bottom: 80px; }
 
-    /* HERO */
     .hero { margin-bottom: 80px; }
 
     .hero-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px;
     }
 
     .hero-status::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-      animation: pulse 2s ease-in-out infinite;
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #4ade80; animation: pulse 2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
     .hero h1 {
-      font-size: clamp(2rem, 6vw, 2.8rem);
-      font-weight: 300;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 300;
+      line-height: 1.15; letter-spacing: -0.03em; color: var(--text); margin-bottom: 20px;
     }
+    .hero h1 span { color: var(--text-muted); }
+    .hero-bio { font-size: 15px; color: var(--text-dim); line-height: 1.7; max-width: 520px; }
 
-    .hero h1 span {
-      color: var(--text-muted);
-    }
-
-    .hero-bio {
-      font-size: 15px;
-      color: var(--text-dim);
-      line-height: 1.7;
-      max-width: 520px;
-    }
-
-    .hero-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
+    .hero-links { display: flex; gap: 1rem; margin-top: 28px; flex-wrap: wrap; }
     .hero-links a {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.15s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+      text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s;
+      display: flex; align-items: center; gap: 6px;
     }
-
     .hero-links a:hover { color: var(--text); }
+    .hero-links a svg { width: 14px; height: 14px; opacity: 0.6; }
 
-    .hero-links a svg {
-      width: 14px;
-      height: 14px;
-      opacity: 0.6;
-    }
-
-    /* SECTION LABELS */
     .section-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    /* EXPERIENCE */
-    .exp-item {
-      padding: 20px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .exp-item:last-child { border-bottom: 1px solid var(--border); }
-
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .exp-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .exp-date {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .exp-org {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .exp-desc {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      gap: 1px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .project-item {
-      background: var(--bg-2);
-      padding: 20px;
-      transition: background 0.15s;
-      cursor: default;
-    }
-
-    .project-item:hover { background: var(--bg-3); }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
-    }
-
-    .project-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .project-links {
-      display: flex;
-      gap: 10px;
-    }
-
-    .project-links a {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.15s;
-      display: flex;
-      align-items: center;
-    }
-
-    .project-links a:hover { color: var(--text); }
-
-    .project-desc {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.04em;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 2px 7px;
-    }
-
-    .tag.wip {
-      color: #f59e0b;
-      border-color: rgba(245,158,11,0.2);
-      background: rgba(245,158,11,0.05);
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;
     }
 
     /* ABOUT */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
     }
-
-    .about-item {
-      background: var(--bg-2);
-      padding: 16px 20px;
-    }
-
+    .about-item { background: var(--bg-2); padding: 16px 20px; }
     .about-item-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;
+    }
+    .about-item-value { font-size: 13px; color: var(--text-dim); }
+
+    .edu-card {
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .gpa-badge {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em;
+      color: var(--text-muted); background: var(--tag-bg);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 2px 7px; white-space: nowrap;
     }
 
-    .about-item-value {
-      font-size: 13px;
-      color: var(--text-dim);
+    /* EXPERIENCE */
+    .exp-item { padding: 20px 0; border-top: 1px solid var(--border); }
+    .exp-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 6px; }
+    .exp-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    .exp-date { font-family: var(--mono); font-size: 11px; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
+    .exp-org { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+
+    .exp-bullets {
+      list-style: none; display: flex; flex-direction: column; gap: 6px;
+    }
+    .exp-bullets li {
+      font-size: 13px; color: var(--text-dim); line-height: 1.65;
+      padding-left: 14px; position: relative;
+    }
+    .exp-bullets li::before {
+      content: '–'; position: absolute; left: 0; color: var(--text-muted);
     }
 
-    /* INTERESTS */
-    .interests-text {
-      font-size: 14px;
-      color: var(--text-dim);
-      line-height: 1.75;
+    /* PROJECTS */
+    .projects-grid { display: grid; gap: 1px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .project-item { background: var(--bg-2); padding: 20px; transition: background 0.15s; cursor: default; }
+    .project-item:hover { background: var(--bg-3); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .project-name { font-size: 14px; font-weight: 500; color: var(--text); }
+    .project-links { display: flex; gap: 10px; align-items: center; }
+    .project-links a {
+      font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+      text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s;
+      display: flex; align-items: center;
+    }
+    .project-links a:hover { color: var(--text); }
+    .project-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em;
+      color: var(--tag-text); background: var(--tag-bg);
+      border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px;
     }
 
     /* CONTACT */
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
-      background: var(--bg-2);
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-
+    .contact-links { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: var(--bg-2); text-decoration: none; transition: background 0.15s; }
     .contact-link:hover { background: var(--bg-3); }
+    .contact-link-left { display: flex; align-items: center; gap: 12px; }
+    .contact-link-label { font-size: 13px; color: var(--text); }
+    .contact-link-value { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
+    .contact-arrow { font-size: 12px; color: var(--text-muted); transition: transform 0.15s, color 0.15s; }
+    .contact-link:hover .contact-arrow { transform: translateX(3px); color: var(--text); }
 
-    .contact-link-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    footer { border-top: 1px solid var(--border); padding: 24px 2rem; max-width: 860px; margin: 0 auto; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-text { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
 
-    .contact-link-label {
-      font-size: 13px;
-      color: var(--text);
-    }
-
-    .contact-link-value {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .contact-arrow {
-      font-size: 12px;
-      color: var(--text-muted);
-      transition: transform 0.15s, color 0.15s;
-    }
-
-    .contact-link:hover .contact-arrow {
-      transform: translateX(3px);
-      color: var(--text);
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 2rem;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-text {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
-
-    /* FADE IN */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeIn 0.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    .fade-in { opacity: 0; transform: translateY(16px); animation: fadeIn 0.5s ease forwards; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
     .fade-in:nth-child(1) { animation-delay: 0.05s; }
     .fade-in:nth-child(2) { animation-delay: 0.1s; }
     .fade-in:nth-child(3) { animation-delay: 0.15s; }
@@ -468,10 +215,10 @@
     <span class="nav-logo-name">Rafay Farah</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#hackathons">Hackathons</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -510,7 +257,12 @@
     <div class="about-grid">
       <div class="about-item" style="border-left: 2px solid var(--text); padding-left: 16px; background: transparent; border-top: none; border-right: none; border-bottom: none; border-radius: 0;">
         <div class="about-item-label">Education</div>
-        <div class="about-item-value">B.S. Computer Science<br />University of Washington</div>
+        <div class="about-item-value">
+          <div class="edu-card">
+            <span>B.S. Computer Science<br />University of Washington</span>
+            <span class="gpa-badge">GPA 3.99 / 4.0</span>
+          </div>
+        </div>
       </div>
       <div class="about-item" style="border-left: 2px solid var(--border); padding-left: 16px; background: transparent; border-top: none; border-right: none; border-bottom: none; border-radius: 0;">
         <div class="about-item-label">Currently</div>
@@ -545,34 +297,55 @@
         <div class="exp-date">Jun 2026 &mdash; Present</div>
       </div>
       <div class="exp-org">LRDC FACET Lab, University of Pittsburgh</div>
-      <div class="exp-desc">Selected as 1 of 7 students in a competitive NSF-funded program with roughly a 6% acceptance rate. Conducting research under Dr. Erin Walker at the intersection of AI and learning sciences. Working on two projects: a multi-purpose teachable agent (LLM-powered system focused on prompt engineering and system design), and a gestural entrainment study exploring how a NAO robot can mirror human gesture patterns to create more natural learning interactions.</div>
+      <ul class="exp-bullets">
+        <li>Selected as 1 of 7 students from a nationally competitive NSF-funded REU program to conduct research in AI, intelligent tutoring systems, robotics, and human-computer interaction under the mentorship of Dr. Erin Walker</li>
+        <li>Developing a configurable multi-agent LLM platform in Next.js where students teach Cora, an adaptive AI persona with swappable models and customizable prompts, enabling structured learning-by-teaching interactions</li>
+        <li>Designing agent-style prompting systems for controlled dialogue progression and adaptive student input handling</li>
+        <li>Contributing to a gestural entrainment study on a NAO robot by engineering prompt-based NLP methods to isolate gesture-likely words, evaluating how synchronized human-robot interactions affect student engagement</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Software Engineer</div>
+        <div class="exp-date">Feb 2026 &mdash; Present</div>
+      </div>
+      <div class="exp-org">Startup Club, University of Washington</div>
+      <ul class="exp-bullets">
+        <li>Developed the core chatbot orchestration layer, coordinating user requests, conversation-state management, and company-enrichment workflows to automate company discovery and personalized LinkedIn/email outreach</li>
+        <li>Shipped TextbookFinder, a React/Vite app integrating Open Library API to help students find affordable textbooks, contributing search, filtering, and book detail features on a team of 10+ engineers</li>
+      </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
         <div class="exp-title">Undergraduate Researcher</div>
-        <div class="exp-date">Mar 2026 &mdash; Present</div>
+        <div class="exp-date">Apr 2026 &mdash; Present</div>
       </div>
       <div class="exp-org">Sensors, Energy, and Automation Laboratory (SEAL), University of Washington</div>
-      <div class="exp-desc">Contributing to W3 website redesign using Next.js and Tailwind for the SEAL research group at UW Seattle. Assigned to Agentic Proposal Pipeline exploring LLM-based automation for research workflows.</div>
+      <ul class="exp-bullets">
+        <li>Conducting undergraduate research at UW Seattle's SEAL Lab, developing and evaluating LLM-powered automation workflows for research proposal generation, document processing, and academic task orchestration</li>
+      </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
-        <div class="exp-title">Software Engineer, Engineering Team</div>
-        <div class="exp-date">Jan 2026 &mdash; Present</div>
-      </div>
-      <div class="exp-org">Startup Club, University of Washington</div>
-      <div class="exp-desc">Building and shipping production software for real client engagements as part of a student-run engineering team, contributing across full-stack web applications and AI-powered tooling. Working with a team of 10+ engineers on feature development, code reviews, and production deployments.</div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title">Technical Lead, Web Platform</div>
-        <div class="exp-date">Jan 2026 &mdash; Present</div>
+        <div class="exp-title">Technical Lead</div>
+        <div class="exp-date">Jan 2026 &mdash; Jun 2026</div>
       </div>
       <div class="exp-org">Beta Alpha Psi, University of Washington</div>
-      <div class="exp-desc">Architected and deployed the chapter's full web platform from scratch -- 20+ pages including a member portal, event calendar, and resource hub serving 200+ members. Engineered a multi-method payment integration replacing a single external link, driving a 40% increase in member engagement. Serve as the chapter's sole technical point of contact, handling deployment, new features, and ongoing maintenance.</div>
+      <ul class="exp-bullets">
+        <li>Architected and deployed chapter web platform with 20+ pages and integrated member portal serving 200+ members; engineered multi-method payment system driving 40% engagement increase</li>
+        <li>Sole technical lead managing deployment, features, and production issues for 200+ active members</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">BASC Paraprofessional</div>
+        <div class="exp-date">Sep 2023 &mdash; Present</div>
+      </div>
+      <div class="exp-org">Issaquah School District, Sammamish, WA</div>
     </div>
 
   </section>
@@ -589,10 +362,12 @@
             <a href="https://github.com/FreezeXero/Rize" target="_blank" title="GitHub">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
             </a>
-            <span class="tag wip">in progress</span>
+            <a href="https://rizeapp.co" target="_blank" title="Live">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
-        <div class="project-desc">AI-powered resume builder SaaS. Full-stack with Next.js 14, Supabase, Stripe, and the Claude API. Generates polished LaTeX PDFs.</div>
+        <div class="project-desc">Full-stack resume platform with customizable templates, visual editing, and LaTeX PDF generation. Engineered a server-side LaTeX rendering pipeline enabling code-free resume customization and export. Integrated authentication, ATS analysis, subscriptions, and AI-assisted content generation.</div>
         <div class="project-tags">
           <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Claude API</span><span class="tag">LaTeX</span>
         </div>
@@ -610,7 +385,7 @@
             </a>
           </div>
         </div>
-        <div class="project-desc">iOS and web calendar app with Claude API integration for natural language event creation and smart scheduling suggestions. Built the full iOS app in Swift and shipped a companion web version, both deployed and publicly accessible via TestFlight and Vercel.</div>
+        <div class="project-desc">iOS and web calendar app with Claude API integration for natural language event creation and smart scheduling suggestions. Built the full iOS app and shipped a companion web version, both publicly accessible via TestFlight and Vercel.</div>
         <div class="project-tags">
           <span class="tag">iOS</span><span class="tag">Claude API</span><span class="tag">TestFlight</span>
         </div>
@@ -628,7 +403,7 @@
             </a>
           </div>
         </div>
-        <div class="project-desc">Interview practice app simulating technical and behavioral interviews with STAR-based feedback. Integrates Claude API with dynamic resume parsing.</div>
+        <div class="project-desc">Interview practice app simulating technical and behavioral interviews with STAR-based feedback. Integrates Claude API with dynamic resume parsing to tailor questions to your background.</div>
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Claude API</span>
         </div>
@@ -643,7 +418,7 @@
             </a>
           </div>
         </div>
-        <div class="project-desc">Full-stack analytics bot serving a 750+ member Discord community. Tracks engagement metrics and generates real-time activity leaderboards with persistent storage.</div>
+        <div class="project-desc">Full-stack analytics bot serving a 750+ member Discord community. Tracks engagement metrics, generates real-time activity leaderboards, and runs automated moderation with persistent SQLite storage deployed on Railway.</div>
         <div class="project-tags">
           <span class="tag">Java</span><span class="tag">JDA</span><span class="tag">SQLite</span><span class="tag">Railway</span>
         </div>
@@ -658,9 +433,9 @@
             </a>
           </div>
         </div>
-        <div class="project-desc">Full-stack event management platform built as a software engineering group project. Spring Boot backend with a React frontend.</div>
+        <div class="project-desc">Full-stack event ticketing and management platform built as a software engineering group project. Spring Boot REST API backend, React frontend, MySQL database, and Docker for containerized deployment.</div>
         <div class="project-tags">
-          <span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">Java</span>
+          <span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">Docker</span>
         </div>
       </div>
 
@@ -686,7 +461,7 @@
             <span class="tag" style="color: var(--text); border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); font-weight: 500;">Won Top 3</span>
           </div>
         </div>
-        <div class="project-desc">LLM benchmark testing whether AI models genuinely learn Jenga strategy when taught by a student. Evaluated Claude, GPT-4, and Gemini on a reproducible scoring platform.</div>
+        <div class="project-desc">A deterministic 3D Jenga physics benchmark built on the Mesocosm platform, evaluating multimodal AI reasoning about physical stability and spatial structure. Built with PyBullet for rigid body dynamics and collision resolution, with a constrained action space for camera control and directional block pushes. Tested GPT-4, Claude, and Gemini, with a replay-driven WebGL viewer reconstructing full episodes from exported traces.</div>
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">LLM Benchmarking</span><span class="tag">Mesocosm</span>
         </div>
@@ -716,11 +491,14 @@
             <a href="https://github.com/FreezeXero/uwb-hacks-2026" target="_blank" title="GitHub">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
             </a>
+            <a href="https://uwb-hacks-2026.vercel.app" target="_blank" title="Live">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
-        <div class="project-desc">Gamified accountability and productivity app that turns daily goals into a progression system. Built end-to-end in under 24 hours.</div>
+        <div class="project-desc">Gamified social accountability app where Claude verifies quest completions, users earn XP and rank up through 9 tiers, and compete with friends and squads on live leaderboards. Built end-to-end in under 24 hours.</div>
         <div class="project-tags">
-          <span class="tag">React</span><span class="tag">Gamification</span>
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Auth0</span><span class="tag">Claude API</span>
         </div>
       </div>
 
@@ -756,12 +534,12 @@
         </div>
         <div>
           <div style="font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px;">Rafay Farah &mdash; Resume</div>
-          <div style="font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em;">ResumeFarahRX.pdf</div>
+          <div style="font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em;">ResumeFarah.pdf</div>
         </div>
       </div>
       <div style="display: flex; gap: 10px;">
-        <a href="https://freezexero.github.io/ResumeFarahRX.pdf" target="_blank" style="flex: 1; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--text); text-decoration: none; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 6px; padding: 10px 0; letter-spacing: 0.04em; transition: background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">View</a>
-        <a href="https://freezexero.github.io/ResumeFarahRX.pdf" download style="flex: 1; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--bg); text-decoration: none; background: var(--text); border: 1px solid var(--text); border-radius: 6px; padding: 10px 0; letter-spacing: 0.04em; transition: opacity 0.15s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Download</a>
+        <a href="https://freezexero.github.io/ResumeFarah.pdf" target="_blank" style="flex: 1; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--text); text-decoration: none; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 6px; padding: 10px 0; letter-spacing: 0.04em; transition: background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">View</a>
+        <a href="https://freezexero.github.io/ResumeFarah.pdf" download style="flex: 1; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--bg); text-decoration: none; background: var(--text); border: 1px solid var(--text); border-radius: 6px; padding: 10px 0; letter-spacing: 0.04em; transition: opacity 0.15s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Download</a>
       </div>
     </div>
   </section>
@@ -812,7 +590,6 @@
     </div>
   </section>
 
-</main>
 </main>
 
 <footer>
