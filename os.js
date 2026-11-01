@@ -1,0 +1,53 @@
+(() => {
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const apps=['home','projects','hackathons','about','contact','terminal'];let z=20;let currentApp='home';
+function syncDock(){
+ $$('.dock [data-open],.quick-nav [data-open]').forEach(b=>{
+  const active=b.dataset.open===currentApp;
+  b.classList.toggle('running',active);
+  if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
+ });
+}
+function front(win){$$('.window').forEach(w=>w.classList.remove('active'));win.classList.add('active');win.style.zIndex=++z;}
+function openApp(app,updateHash=true){
+ if(!apps.includes(app))app='home';
+ const win=$('#win-'+app);
+ $$('.window').forEach(w=>{w.hidden=w!==win;});
+ currentApp=app;front(win);syncDock();
+ if(updateHash&&location.hash!=='#'+app)history.pushState({app},'', '#'+app);
+ const heading=win.querySelector('.window-bar h2');heading.tabIndex=-1;
+ if(app==='terminal')$('#terminal-input').focus({preventScroll:true});else heading.focus({preventScroll:true});
+}
+function closeApp(app){
+ if(app==='home')return;
+ openApp('home');
+}
+$$('[data-open]').forEach(b=>b.addEventListener('click',()=>openApp(b.dataset.open)));
+$$('[data-close],[data-minimize]').forEach(b=>b.addEventListener('click',()=>closeApp(b.dataset.close||b.dataset.minimize)));
+$$('[data-maximize]').forEach(b=>b.addEventListener('click',()=>{const w=$('#win-'+b.dataset.maximize);const on=w.classList.toggle('maximized');b.setAttribute('aria-label',(on?'Restore ':'Maximize ')+b.dataset.maximize);}));
+$$('.window').forEach(win=>{win.addEventListener('pointerdown',()=>front(win));const bar=win.querySelector('.window-bar');let drag=null;bar.addEventListener('pointerdown',e=>{if(e.target.closest('button')||win.classList.contains('maximized')||matchMedia('(max-width:700px)').matches)return;const rect=win.getBoundingClientRect(),desk=$('#desktop').getBoundingClientRect();drag={x:e.clientX,y:e.clientY,left:rect.left-desk.left,top:rect.top-desk.top};bar.setPointerCapture(e.pointerId);});bar.addEventListener('pointermove',e=>{if(!drag)return;const desk=$('#desktop');win.style.left=Math.max(0,Math.min(desk.clientWidth-win.offsetWidth,drag.left+e.clientX-drag.x))+'px';win.style.top=Math.max(0,Math.min(desk.clientHeight-125,drag.top+e.clientY-drag.y))+'px';});bar.addEventListener('pointerup',()=>drag=null);bar.addEventListener('pointercancel',()=>drag=null);});
+$('#reset-desktop').addEventListener('click',()=>{$$('.window').forEach(w=>{w.hidden=w.dataset.app!=='home';w.style.left='';w.style.top='';w.classList.remove('maximized');});openApp('home');});
+window.addEventListener('resize',()=>{$$('.window').forEach(w=>{w.style.left='';w.style.top='';});});
+window.addEventListener('popstate',()=>openApp(location.hash.slice(1),false));
+window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);if(next!==currentApp)openApp(next,false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&currentApp!=='home'&&!e.target.closest?.('input,textarea,select,[contenteditable=true]')){e.preventDefault();openApp('home');}});
+$('.brand').addEventListener('click',e=>{e.preventDefault();openApp('home');});
+$('#theme-toggle').addEventListener('click',e=>{const alternate=document.body.classList.toggle('alternate');e.currentTarget.setAttribute('aria-pressed',String(alternate));});
+$('#motion-toggle').addEventListener('click',e=>{const paused=document.body.classList.toggle('motion-paused');e.currentTarget.setAttribute('aria-pressed',String(paused));e.currentTarget.title=paused?'Resume wallpaper motion':'Pause wallpaper motion';});
+function clock(){const now=new Date();$('#clock').textContent='SEA '+new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);$('#clock').dateTime=now.toISOString();}clock();setInterval(clock,30000);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const artWords=['stay in touch.','','rize.','make time.','let’s practice.','community.','all together.','level up.','next chapter.','follow curiosity.'];
+let filter='all';
+function renderProjects(){const query=$('#project-search').value.toLowerCase();let count=0;$('#project-grid').innerHTML=portfolio.projects.map((p,i)=>{const hay=(p.name+' '+p.description+' '+p.tags.join(' ')).toLowerCase();const match=filter==='all'||(filter==='AI'?/ai|llm|claude|elser|benchmark/i.test(hay):/next|react|spring|full-stack|web|streamlit/i.test(hay));if(!match||!hay.includes(query))return '';count++;const sentence=p.description.match(/^.*?[.!?](?:\s|$)/)?.[0]||p.description;const rest=p.description.slice(sentence.length).trim();let art=i===1?'<div class="jenga-blocks" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></div>':i===0?'<div class="art-bubble" aria-hidden="true">it’s been a minute.<span>some connections are worth keeping.</span></div>':`<span class="art-word" aria-hidden="true">${artWords[i]||esc(p.name)}</span>`;return `<article class="project-card"><div class="project-art art-${i%6}">${art}<span class="art-label">EXPERIMENT ${String(i+1).padStart(2,'0')} / ${esc(p.tags[0]||'BUILD')}</span></div><div class="project-content"><h3>${esc(p.name)}</h3><p>${esc(sentence)}</p>${rest?`<details><summary>Behind the build</summary><p>${esc(rest)}</p></details>`:''}<div class="project-tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-links">${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">Explore project ↗</a>`:''}${p.repo&&p.repo!=='https://github.com/FreezeXero'?`<a href="${esc(p.repo)}" target="_blank" rel="noopener">Source code ↗</a>`:''}${!p.url?'Concept / design project':''}</div></div></article>`;}).join('');$('#project-count').textContent=count?`${String(count).padStart(2,'0')} projects in this folder`:'No projects found. Try another search or filter.';}
+$('#project-search').addEventListener('input',renderProjects);$$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;$$('[data-filter]').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b));});renderProjects();}));renderProjects();
+const hacks=[['Cal Hacks 13.0','UC BERKELEY','2026','COMPLETED','https://calhacks.io'],['HackGT','GEORGIA TECH','2026','COMPLETED','https://hack.gt'],['HackMIT','MIT','SEPTEMBER 2026','INSTA INSIGHTS','https://hackmit.org'],['SWECCathon','UNIVERSITY OF WASHINGTON','JUNE 2026','TOP 3 · JENGABENCH','https://swecc.org'],['UWB Hacks','UNIVERSITY OF WASHINGTON','APRIL 2026','ASCEND','https://uwbhacks.com'],['Zero to Agent','v0 HACKATHON','APRIL 2026','PROFLENS','https://v0.dev']];
+$('#completed-panel').innerHTML=hacks.map(h=>`<article class="stamp"><small>${h[1]}</small><h3>${h[0]}</h3><span class="stamp-star" aria-hidden="true">✳</span><small>${h[2]}</small><span class="award">${h[3]}</span><a href="${h[4]}" target="_blank" rel="noopener">Event website ↗</a></article>`).join('');
+const tabs=$$('.passport-tabs [role=tab]');function selectTab(tab){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!selected;});}tabs.forEach((t,i)=>{t.addEventListener('click',()=>selectTab(t));t.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const next=tabs[e.key==='Home'?0:e.key==='End'?1:1-i];selectTab(next);next.focus();}});});
+$('#experience-list').innerHTML=portfolio.experience.map((e,i)=>`<details class="experience-item" ${i===0?'open':''}><summary><div><h4>${esc(e.title)}</h4><p>${esc(e.org)}</p></div><time>${esc(e.date)}</time></summary>${e.bullets.length?`<ul>${e.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>`:'<p>Issaquah School District · Sammamish, WA</p>'}</details>`).join('');
+$('#copy-email').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('rafayfarah.cs@gmail.com');$('#copy-status').textContent='Email copied. Talk soon!';}catch{$('#copy-status').textContent='rafayfarah.cs@gmail.com';}});
+const output=$('#terminal-output'),input=$('#terminal-input');let commandHistory=[],historyIndex=0;function print(text,cls=''){const p=document.createElement('p');p.textContent=text;p.className=cls;output.append(p);input.scrollIntoView({block:'nearest'});}
+$('#terminal-form').addEventListener('submit',e=>{e.preventDefault();const raw=input.value.trim();if(!raw)return;input.value='';commandHistory.push(raw);historyIndex=commandHistory.length;print('visitor@rafay ~ $ '+raw,'command-echo');const cmd=raw.toLowerCase();if(cmd==='clear'){output.replaceChildren();return;}const commands={help:'Explore: projects · hackathons · about · contact · resume\nOther commands: whoami · skills · github · ls · clear\nTip: use ↑ and ↓ to revisit commands.',whoami:'Rafay Farah\nSoftware engineer. CS @ University of Washington.\nResearch @ Carnegie Mellon. Based in Seattle.',skills:'AI / LLM systems · developer tools · full-stack engineering\nTypeScript · Python · Java · React · Next.js',ls:'projects/  hackathons/  about.txt  contact.txt  ResumeFarah.pdf',github:'github.com/FreezeXero — find the link in Contact.',sudo:'Nice try. This desktop runs on curiosity, not root access.'};if(apps.includes(cmd)){print('Opening '+cmd+'…');openApp(cmd);}else if(cmd==='resume'){print('Opening About — the resume link is there.');openApp('about');}else print(commands[cmd]||`Command not found: ${raw}\nType help to see available commands.`);});input.addEventListener('keydown',e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();historyIndex=Math.max(0,Math.min(commandHistory.length,historyIndex+(e.key==='ArrowUp'?-1:1)));input.value=commandHistory[historyIndex]||'';}});
+$$('[data-close=home],[data-minimize=home]').forEach(b=>{b.disabled=true;b.title='Home stays available';});
+openApp(location.hash.slice(1)||'home',false);
+})();
