@@ -1,0 +1,13 @@
+/* Illustrative project previews, not captured product screenshots. */
+function projectVisual(project,index){
+ if(index===0)return '<img class="actual-project-cover" src="assets/thumbs/insta-insights.png" alt="Insta Insights project artwork" loading="lazy">';
+ if(index===1)return '<div class="tower-scene" aria-hidden="true"><div class="tower-floor"></div><div class="tower-model">'+Array.from({length:7},(_,i)=>'<div class="tower-layer layer-'+i+'"><b></b><b></b><b></b></div>').join('')+'</div><span class="sim-label">PHYSICS × AI</span><span class="sim-orbit"></span></div>';
+ if(index===2)return '<div class="resume-scene" aria-hidden="true"><div class="resume-paper back-paper"><i></i><i></i><i></i></div><div class="resume-paper front-paper"><b>YOUR NEXT<br>CHAPTER.</b><em></em><i></i><i></i><i></i><em></em><i></i><i></i></div><span class="resume-wordmark">rize<span>↗</span></span></div>';
+ if(index===3)return '<div class="calendar-scene" aria-hidden="true"><div class="calendar-top">a little more space.<span>CALYNDR</span></div><div class="calendar-week">'+['MON','TUE','WED','THU','FRI'].map((d,i)=>'<div><span>'+d+'</span><b>'+(12+i)+'</b><i class="cal-event e-'+i+'"></i></div>').join('')+'</div><div class="calendar-message">✦ Make time for what matters.</div></div>';
+ if(index===4)return '<div class="voice-scene" aria-hidden="true"><div class="wave">'+[15,25,42,65,88,54,32,70,96,58,38,24,12].map(h=>'<i style="height:'+h+'px"></i>').join('')+'</div><span>YOUR NEXT GREAT ANSWER.</span></div>';
+ if(index===5)return '<div class="analytics-scene" aria-hidden="true"><span>COMMUNITY, IN FOCUS.</span><div class="bar-chart">'+[25,48,36,68,55,85,73,98].map(h=>'<i style="height:'+h+'%"></i>').join('')+'</div><b>750+ <small>community members</small></b></div>';
+ if(index===6)return '<div class="ticket-scene" aria-hidden="true"><div class="event-ticket"><small>YOUR NEXT GOOD NIGHT</small><strong>EVENT<br>HUB 360</strong><div class="ticket-barcode"></div></div></div>';
+ if(index===7)return '<div class="ascend-scene" aria-hidden="true"><span>SMALL WINS. BIG CLIMBS.</span><div class="steps"><i></i><i></i><i></i><i></i><b>↑</b></div></div>';
+ if(index===8)return '<div class="job-scene" aria-hidden="true"><div class="job-note">find your<br><b>next thing.</b><small>HOBS JOB JAR</small></div></div>';
+ return '<div class="lens-scene" aria-hidden="true"><div class="orbit-dot a"></div><div class="orbit-dot b"></div><div class="orbit-dot c"></div><div class="lens">↗</div><span>FOLLOW YOUR CURIOSITY.</span></div>';
+}
