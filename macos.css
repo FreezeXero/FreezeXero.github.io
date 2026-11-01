@@ -105,3 +105,13 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 @keyframes social-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.social-float{animation:none}}
 .motion-paused .social-float{animation:none}
+
+/* Soft light around the workspace and app dock. */
+.window{border-color:#d4e0ff38;box-shadow:0 30px 80px #0009,0 0 0 1px #e0eaff0b,0 0 35px #b7ceff0b,0 0 90px #9cbcff06,inset 0 1px #ffffff18}
+.window.active{box-shadow:0 30px 80px #0009,0 0 0 1px #e0eaff12,0 0 38px #c0d4ff13,0 0 100px #9cbcff09,inset 0 1px #ffffff1c}
+.dock{border-color:#e0eaff32;box-shadow:0 18px 45px #0008,0 0 30px #d3e1ff0c,inset 0 1px #ffffff25}
+.dock button{--app-glow:145,190,245}.dock button[data-open=about]{--app-glow:186,158,230}.dock button[data-open=projects]{--app-glow:145,213,244}.dock button[data-open=hackathons]{--app-glow:235,203,126}.dock button[data-open=contact]{--app-glow:139,218,202}.dock button[data-open=terminal]{--app-glow:153,215,169}
+.dock-symbol{position:relative;isolation:isolate}.dock-symbol:before{content:'';position:absolute;inset:8px 5px -3px;border-radius:50%;background:rgba(var(--app-glow),.23);filter:blur(12px);z-index:-1;pointer-events:none;transition:background .25s,filter .25s}.dock-symbol img{filter:drop-shadow(0 5px 5px #0008) drop-shadow(0 0 3px rgba(var(--app-glow),.15))}
+.dock button:hover .dock-symbol:before,.dock button:focus-visible .dock-symbol:before{background:rgba(var(--app-glow),.45);filter:blur(13px)}
+.dock button:hover .dock-symbol img,.dock button:focus-visible .dock-symbol img{filter:drop-shadow(0 6px 5px #0008) drop-shadow(0 0 7px rgba(var(--app-glow),.28)) brightness(1.12)}
+.dock button[aria-current=page] .dock-symbol:before{background:rgba(var(--app-glow),.35)}.dock button[aria-current=page] i{background:rgb(var(--app-glow));box-shadow:0 0 7px rgba(var(--app-glow),.7)}
