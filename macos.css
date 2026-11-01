@@ -123,3 +123,13 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 @media(max-width:600px){.overview-trail{margin-top:24px;padding:18px}.trail-copy strong{font-size:12px}.trail-copy small{font-size:8px}.trail-copy>span{font-size:11px}.ambient-sky{display:none}}
 @media(prefers-reduced-motion:reduce){.shooting-star{display:none}}
 .motion-paused .shooting-star{display:none}
+
+/* Keep the shooting stars in the exposed desktop margins. */
+.ambient-sky{z-index:1}.sky-point{opacity:.45}
+.shooting-star{width:95px;height:2px;background:linear-gradient(90deg,transparent,#cfe5ff);box-shadow:0 0 10px #b7d8ff55;animation:margin-meteor 7s linear infinite}
+.star-one{left:auto;right:calc((100% - 1120px)/4 + 50px);top:10%;animation-delay:-1s}
+.star-two{left:calc((100% - 1120px)/4 - 70px);right:auto;top:45%;animation-duration:9s;animation-delay:-5s}
+.star-three{left:auto;right:calc((100% - 1120px)/4 + 40px);top:65%;animation-duration:11s;animation-delay:-8s}
+@keyframes margin-meteor{0%{opacity:0;transform:translate(-30px,-65px) rotate(65deg)}5%{opacity:.85}23%{opacity:.7}29%{opacity:0;transform:translate(65px,140px) rotate(65deg)}100%{opacity:0;transform:translate(65px,140px) rotate(65deg)}}
+@media(max-width:1559px){.star-one{right:4px;top:6%}.star-two{left:-45px;top:45%}.star-three{right:20px;top:65%}}
+@media(max-width:600px),(prefers-reduced-motion:reduce){.shooting-star{display:none}}
