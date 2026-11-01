@@ -94,3 +94,5 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 .school-mit-full{position:relative;overflow:hidden;flex-basis:135px;width:135px;height:58px;padding:0;background:#080a0e;border-color:#ffffff14}.school-mit-full img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:132%;height:auto;max-width:none;max-height:none;filter:grayscale(1) invert(1);mix-blend-mode:screen}
 @media(max-width:600px){.school-mit-full{flex-basis:125px;width:125px;height:54px}}
 @media(max-width:380px){.school-mit-full{flex-basis:106px;width:106px;height:49px}}
+
+.school-mit-full{padding:10px}.school-mit-full img{position:static;transform:none;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;filter:none;mix-blend-mode:normal}

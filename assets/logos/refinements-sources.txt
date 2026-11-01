@@ -4,3 +4,5 @@ MIT: existing vector rendered in white, a supported logo color: https://brand.mi
 Event names: https://hack.gt/ and https://hackmit.org/
 
 MIT full-name lockup: https://brand.mit.edu/sites/default/files/2023-08/MIT-lockup-3-line-download_0.png
+
+MIT full-name vector: inline official masthead logo at https://www.mit.edu/ (rendered in white).
