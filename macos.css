@@ -89,3 +89,5 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 .career-logo{border:0;box-shadow:none;background:transparent;border-radius:7px}.career-logo img{padding:0}.career-logo-cmu{background:#c41230}.career-logo-pitt,.career-logo-startupclub,.career-logo-seal,.career-logo-bap{background:#fff}.career-logo-pitt img,.career-logo-startupclub img,.career-logo-seal img{padding:3px}.career-initials{color:#b6c5d8}.pinned-items img[src*="cmu"]{padding:0;border:0;background:#c41230}
 @media(max-width:600px){.school-gatech-dark{flex-basis:90px;width:90px}.school-uw-wordmark{flex-basis:100px;width:100px}.school-mit-white{flex-basis:70px;width:70px}}
 @media(max-width:380px){.school-gatech-dark{flex-basis:74px;width:74px}.school-uw-wordmark{flex-basis:85px;width:85px}.school-mit-white{flex-basis:60px;width:60px}}
+
+.stride-project-cover{display:block;width:100%;height:100%;object-fit:contain;background:#eee9df}.featured-preview:has(.stride-project-cover){height:auto;aspect-ratio:3/2}.quick-look-art:has(.stride-project-cover){height:auto;aspect-ratio:3/2}

@@ -1,6 +1,6 @@
 /* Illustrative project previews, not captured product screenshots. */
 function projectVisual(project,index){
- if(index===10)return '<div class="stride-scene" aria-hidden="true"><div class="mini-desktop"><i></i><i></i><i></i><div class="stride-command"><span>Stride</span><strong>Your words.<br>Into action.</strong><b>Open. Find. Build. Done.</b></div></div></div>';
+ if(index===10)return '<img class="stride-project-cover" src="assets/thumbs/stride.png" alt="Stride: It asks first. Then it checks. An assistant for your Mac." width="1800" height="1200">';
  if(index===11)return '<div class="headsup-scene" aria-hidden="true"><div class="coverage-card"><span class="coverage-cross">+</span><small>HEADSUP</small><strong>Stay ahead<br>of coverage changes.</strong><div><i></i> Coverage update detected</div></div></div>';
  if(index===0)return '<img class="actual-project-cover" src="assets/thumbs/insta-insights.png" alt="Insta Insights project artwork" loading="lazy">';
  if(index===1)return '<div class="tower-scene" aria-hidden="true"><div class="tower-floor"></div><div class="tower-model">'+Array.from({length:7},(_,i)=>'<div class="tower-layer layer-'+i+'"><b></b><b></b><b></b></div>').join('')+'</div><span class="sim-label">PHYSICS × AI</span><span class="sim-orbit"></span></div>';
