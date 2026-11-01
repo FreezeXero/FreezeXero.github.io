@@ -1,0 +1,4 @@
+UW white wordmark: https://cdn.uw.edu/wp-content/uploads/sites/230/2023/11/02134818/Wordmark_stacked_white.png
+Georgia Tech white logo: https://brand.gatech.edu/modules/contrib/gt_tools/images/gt-logo.svg
+MIT: existing vector rendered in white, a supported logo color: https://brand.mit.edu/downloads
+Event names: https://hack.gt/ and https://hackmit.org/
