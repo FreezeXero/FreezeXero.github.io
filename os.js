@@ -11,6 +11,14 @@ function syncDock(){
 }
 function front(win){$$('.window').forEach(w=>w.classList.remove('active'));win.classList.add('active');win.style.zIndex=++z;}
 function openApp(app,updateHash=true){
+ if(app==='desktop'){
+  $$('.window').forEach(w=>{w.hidden=true;w.classList.remove('active');});
+  currentApp='desktop';syncDock();$('#desktop-reveal').hidden=false;
+  if(updateHash&&location.hash!=='#desktop')history.pushState({app},'', '#desktop');
+  $('#reopen-workspace').focus({preventScroll:true});return;
+ }
+ $('#desktop-reveal').hidden=true;
+
  if(!apps.includes(app))app='home';
  const win=$('#win-'+app);
  $$('.window').forEach(w=>{w.hidden=w!==win;});
@@ -19,10 +27,7 @@ function openApp(app,updateHash=true){
  const heading=win.querySelector('.window-bar h2');heading.tabIndex=-1;
  if(app==='terminal')$('#terminal-input').focus({preventScroll:true});else heading.focus({preventScroll:true});
 }
-function closeApp(app){
- if(app==='home')return;
- openApp('home');
-}
+function closeApp(app){openApp('desktop');}
 $$('[data-open]').forEach(b=>b.addEventListener('click',()=>openApp(b.dataset.open)));
 $$('[data-close],[data-minimize]').forEach(b=>b.addEventListener('click',()=>closeApp(b.dataset.close||b.dataset.minimize)));
 $$('[data-maximize]').forEach(b=>b.addEventListener('click',()=>{const w=$('#win-'+b.dataset.maximize);const on=w.classList.toggle('maximized');b.setAttribute('aria-label',(on?'Restore ':'Maximize ')+b.dataset.maximize);}));
@@ -48,6 +53,6 @@ $('#experience-list').innerHTML=portfolio.experience.map(e=>`<article class="car
 $('#copy-email').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('rafayfarah.cs@gmail.com');$('#copy-status').textContent='Email copied. Talk soon!';}catch{$('#copy-status').textContent='rafayfarah.cs@gmail.com';}});
 const output=$('#terminal-output'),input=$('#terminal-input');let commandHistory=[],historyIndex=0;function print(text,cls=''){const p=document.createElement('p');p.textContent=text;p.className=cls;output.append(p);input.scrollIntoView({block:'nearest'});}
 $('#terminal-form').addEventListener('submit',e=>{e.preventDefault();const raw=input.value.trim();if(!raw)return;input.value='';commandHistory.push(raw);historyIndex=commandHistory.length;print('visitor@rafay ~ $ '+raw,'command-echo');const cmd=raw.toLowerCase();if(cmd==='clear'){output.replaceChildren();return;}const commands={help:'Explore: projects · hackathons · about · contact · resume\nOther commands: whoami · skills · github · ls · clear\nTip: use ↑ and ↓ to revisit commands.',whoami:'Rafay Farah\nSoftware engineer. CS @ University of Washington.\nResearch @ Carnegie Mellon. Based in Seattle.',skills:'AI / LLM systems · developer tools · full-stack engineering\nTypeScript · Python · Java · React · Next.js',ls:'projects/  hackathons/  about.txt  contact.txt  Farah_Rafay_resumeweb.pdf',github:'github.com/FreezeXero — find the link in Contact.',sudo:'Nice try. This desktop runs on curiosity, not root access.'};if(apps.includes(cmd)){print('Opening '+cmd+'…');openApp(cmd);}else if(cmd==='resume'){print('Opening About — the resume link is there.');openApp('about');}else print(commands[cmd]||`Command not found: ${raw}\nType help to see available commands.`);});input.addEventListener('keydown',e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();historyIndex=Math.max(0,Math.min(commandHistory.length,historyIndex+(e.key==='ArrowUp'?-1:1)));input.value=commandHistory[historyIndex]||'';}});
-$$('[data-close=home],[data-minimize=home]').forEach(b=>{b.disabled=true;b.title='Home stays available';});
+
 openApp(location.hash.slice(1)||'home',false);
 })();
