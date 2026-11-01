@@ -1,0 +1,30 @@
+{
+  "calhacks": [
+    "https://calhacks.io/assets/brand/og.png",
+    "png"
+  ],
+  "hackgt": [
+    "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/379/047/datas/large.png",
+    "png"
+  ],
+  "hackmit": [
+    "https://hackmit.org/logo.svg",
+    "svg"
+  ],
+  "sweccathon": [
+    "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/715/918/datas/large.png",
+    "png"
+  ],
+  "uwbhacks": [
+    "https://uwbhacks.com/card-image.png",
+    "png"
+  ],
+  "zero": [
+    "https://community.vercel.com/events/open-graph/hackathon/zero-to-agent",
+    "png"
+  ],
+  "princeton": [
+    "https://www.hackprinceton.com/opengraph-image?4d6c01e45bfb4063",
+    "png"
+  ]
+}
