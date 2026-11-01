@@ -19,4 +19,9 @@
  document.addEventListener('pointerout',event=>{const card=event.target.closest('.project-card');if(card&&!card.contains(event.relatedTarget)){if(pending?.card===card){cancelAnimationFrame(frame);frame=0;pending=null;}card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');}});
  function clearMotion(){if(motion())return;cancelAnimationFrame(frame);frame=0;pending=null;document.querySelectorAll('.project-card').forEach(card=>{card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');});document.getAnimations?.().forEach(a=>a.cancel());}
  reduce.addEventListener('change',clearMotion);document.querySelector('#motion-toggle').addEventListener('click',clearMotion);
+
+ const intro=document.querySelector('.home-intro');let lightFrame=0,lightPoint=null;
+ intro.addEventListener('pointermove',event=>{if(!fine.matches||!motion())return;lightPoint={x:event.clientX,y:event.clientY};if(lightFrame)return;lightFrame=requestAnimationFrame(()=>{lightFrame=0;if(!lightPoint)return;const r=intro.getBoundingClientRect();intro.style.setProperty('--light-x',(lightPoint.x-r.left)+'px');intro.style.setProperty('--light-y',(lightPoint.y-r.top)+'px');});});
+ function resetLight(){cancelAnimationFrame(lightFrame);lightFrame=0;lightPoint=null;intro.style.removeProperty('--light-x');intro.style.removeProperty('--light-y');}
+ intro.addEventListener('pointerleave',resetLight);reduce.addEventListener('change',resetLight);document.querySelector('#motion-toggle').addEventListener('click',resetLight);
 })();
