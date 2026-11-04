@@ -187,7 +187,7 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 .project-art:has(.halo-project-cover) .art-label{display:none}
 
 /* A restrained cool tint over the charcoal workspace. */
-.window.active{border-color:rgba(184,205,235,.23);box-shadow:0 25px 80px #0008,0 0 35px #b9d5ff0a,inset 0 1px #e2edff12}
+.window.active{border-color:rgba(214,229,250,.42);box-shadow:0 25px 80px #0008,0 0 0 1px #e4efff16,0 0 18px #e1edff23,0 0 48px #bdd7ff19,0 0 85px #bdd7ff0c,inset 0 1px #f1f6ff26}
 .window-bar{background:linear-gradient(110deg,#24262b,#1c1d21 60%,#22242a)}
 .finder-sidebar{background:linear-gradient(155deg,#1b1d22,#141517 75%)}
 .welcome-body{background:radial-gradient(ellipse at 15% 0%,#9dc8ff07,transparent 60%),#101113}
