@@ -1,6 +1,6 @@
 /* Illustrative project previews, not captured product screenshots. */
 function projectVisual(project,index){
- if(index===12)return '<div class="halo-cover"><div class="halo-cover-brand"><i></i> Halo <span>PRIVATE BETA</span></div><div class="halo-cover-title">Just say it.<br><em>Halo does it.</em></div><div class="halo-cover-voice"><span class="halo-cover-ring"></span><span>Help starts with your voice.</span><span class="halo-wave" aria-hidden="true">&#9614;&#9612;&#9608;&#9612;&#9614;</span></div><div class="halo-cover-footer">macOS + Windows<span>Built beyond Stride.</span></div></div>';
+ if(index===12)return '<img class="halo-project-cover" src="assets/thumbs/halo.svg" alt="Halo: Just say it. Halo does it. Voice-first help for Mac and Windows. Private beta." width="900" height="600">';
 
  if(index===10)return '<img class="stride-project-cover" src="assets/thumbs/stride.png" alt="Stride: It asks first. Then it checks. An assistant for your Mac." width="1800" height="1200">';
  if(index===11)return '<div class="headsup-scene" aria-hidden="true"><div class="coverage-card"><span class="coverage-cross">+</span><small>HEADSUP</small><strong>Stay ahead<br>of coverage changes.</strong><div><i></i> Coverage update detected</div></div></div>';

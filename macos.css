@@ -181,10 +181,22 @@ body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{anim
 @media(max-width:600px){.experience-section-heading>span{display:none}#experience-list{padding-left:16px}#experience-list:before{left:2px}#experience-list .experience-role{padding:17px 10px;gap:10px}.role-node{left:-18px;top:23px}.role-heading{flex-wrap:wrap;gap:3px}.role-current{padding:3px 6px;font-size:7px}.role-heading h4{flex-basis:75%}.experience-role .career-logo{width:34px;height:34px}.experience-role .career-logo-issaquah{width:43px}.experience-role .career-description{padding-left:8px}}
 @media(prefers-reduced-motion:reduce){.experience-role:hover .career-logo{transform:none}}.motion-paused .experience-role:hover .career-logo{transform:none}
 
-/* Halo: product artwork echoing its own black-and-gold identity. */
-.halo-cover{width:100%;height:100%;min-height:230px;box-sizing:border-box;padding:7%;display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:radial-gradient(ellipse at 85% 70%,rgba(255,201,77,.055),transparent 60%),#0a0a0b;color:#ededec;overflow:hidden}
-.featured-preview:has(.halo-cover),.quick-look-art:has(.halo-cover){aspect-ratio:3/2}
-.halo-cover-brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:600}.halo-cover-brand i{width:15px;height:15px;border:2px solid #ffc94d;border-radius:50%;box-shadow:0 0 12px #ffc94d55}.halo-cover-brand>span{margin-left:auto;font:9px ui-monospace,monospace;letter-spacing:.1em;color:#a1a1a0}
-.halo-cover-title{font:clamp(32px,3.1vw,55px)/1.04 Georgia,serif;letter-spacing:-.035em}.halo-cover-title em{color:#a1a1a0;font-weight:400}
-.halo-cover-voice{display:flex;align-items:center;gap:12px;padding:15px;border:1px solid #ffffff1c;border-radius:12px;background:#151516;font-size:12px;color:#ccc}.halo-cover-ring{flex-shrink:0;width:23px;height:23px;border:2px solid #ffc94d;border-radius:50%;box-shadow:0 0 20px #ffc94d35,inset 0 0 10px #ffc94d25}.halo-wave{margin-left:auto;color:#ffc94d;letter-spacing:2px;font-size:12px}.halo-cover-footer{display:flex;justify-content:space-between;gap:12px;color:#888;font:10px ui-monospace,monospace}.project-art:has(.halo-cover) .art-label{display:none}
-@media(max-width:600px){.halo-cover{gap:18px}.halo-cover-title{font-size:36px}.halo-cover-footer{font-size:9px}}
+/* A fixed vector composition scales as one piece, without clipping text. */
+.halo-project-cover{display:block;width:100%;height:100%;object-fit:contain;background:#0a0a0b}
+.featured-preview:has(.halo-project-cover),.quick-look-art:has(.halo-project-cover),.project-art:has(.halo-project-cover){height:auto;aspect-ratio:3/2;min-height:0;width:100%}
+.project-art:has(.halo-project-cover) .art-label{display:none}
+
+/* A restrained cool tint over the charcoal workspace. */
+.window.active{border-color:rgba(184,205,235,.23);box-shadow:0 25px 80px #0008,0 0 35px #b9d5ff0a,inset 0 1px #e2edff12}
+.window-bar{background:linear-gradient(110deg,#24262b,#1c1d21 60%,#22242a)}
+.finder-sidebar{background:linear-gradient(155deg,#1b1d22,#141517 75%)}
+.welcome-body{background:radial-gradient(ellipse at 15% 0%,#9dc8ff07,transparent 60%),#101113}
+.home-intro{border-color:#c2d8ff14;background:radial-gradient(ellipse at var(--light-x,20%) var(--light-y,0%),#b7d4ff09,transparent 65%),linear-gradient(155deg,#181a1e,#101113 70%)}
+.finder-sidebar button.active{background:linear-gradient(120deg,#303641,#25282e);border-color:#b7d4ff30;color:#edf3fc}
+.finder-sidebar button.active:before{background:#d8e9ff;box-shadow:0 0 10px #bfdcff60}
+.welcome-actions .primary{background:linear-gradient(120deg,#eeeeF3,#d3dfef);color:#1b2029;box-shadow:inset 0 1px #fff9,0 5px 20px #b6d4ff0c}
+.gradient-phrase{background:linear-gradient(110deg,#ebedf3,#bfcfe5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.featured-info{background:radial-gradient(ellipse at 100% 0%,#adcfff06,transparent 70%),linear-gradient(145deg,#232429,#191a1e);border-color:#c6daff16}
+.feature-choices button[aria-pressed=true]{background:linear-gradient(#393e47,#2b2e35);border-color:#c9dcff2a}
+.feature-bottom a,.welcome-socials a{color:#c5d5eb}
+.pinned-items button{background:linear-gradient(120deg,#24262c,#191b1f);border-color:#c9ddff15}
